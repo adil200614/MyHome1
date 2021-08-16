@@ -7,9 +7,13 @@ import com.example.myhome1.model.TaskModel;
 
 import java.util.ArrayList;
 
-public class ViewModel extends androidx.lifecycle.ViewModel{
+public class SharedViewModel extends androidx.lifecycle.ViewModel{
     public MutableLiveData<ArrayList<TaskModel>> mutableLiveData = new MutableLiveData<>();
-    ArrayList<TaskModel> list = new ArrayList<>();
+   public int pos;
+   public ArrayList<TaskModel> list = new ArrayList<>();
+    public  void setPosition(int pos){
+        this.pos= pos;
+    }
 
     public void fetchData() {
         list.add(new TaskModel("Тонкое Искуство Пофигизма ", "Книга о том, как не распыляться по мелочам и приберечь силы и эмоции на что-то по-настоящему важное. А еще она о проблемах, которые неизбежны и том, как к ним относиться, чтобы жить счастливее.", R.drawable.book));
